@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
-const globalStyles = `
+import { ThemeType } from './themes'
+
+type Props = {
+  theme: ThemeType
+}
+
+const GlobalStyles = createGlobalStyle<Props>`
   @font-face {
     src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
     font-display: swap;
@@ -41,6 +47,10 @@ const globalStyles = `
 
   body {
     font-family: Ubuntu;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 16px;
+    background-color: ${props => props.theme.backgroundColor };
   }
 
   a {
@@ -49,4 +59,4 @@ const globalStyles = `
   }
 `
 
-export default createGlobalStyle`${globalStyles}`
+export default GlobalStyles

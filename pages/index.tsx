@@ -1,13 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import GlobalStyles from 'styles/globals'
-import Navigation from 'components/Navigation/Navigation'
+import NavigationLinks from 'components/Navigation/Navigation'
 
 export default function Home() {
   return (
     <>
-      <GlobalStyles />
       <div>
         <Head>
           <title>Create Next App</title>
@@ -15,7 +13,7 @@ export default function Home() {
         </Head>
 
         <main>
-          <Navigation />
+          <NavigationLinks />
         </main>
       </div>
     </>

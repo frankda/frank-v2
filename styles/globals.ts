@@ -43,14 +43,12 @@ const GlobalStyles = createGlobalStyle<Props>`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: background 0.2s ease;
   }
 
   body {
     font-family: Ubuntu;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 16px;
-    background-color: ${props => props.theme.backgroundColor };
+    background-color: ${props => props.theme.color.backgroundColor };
   }
 
   a {

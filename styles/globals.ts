@@ -1,12 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
 import { ThemeType } from './themes'
+import { AnimationClassNames } from './Animation'
 
 type Props = {
   theme: ThemeType
 }
 
 const GlobalStyles = createGlobalStyle<Props>`
+  ${AnimationClassNames}
+
   @font-face {
     src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
     font-display: swap;
@@ -49,6 +52,7 @@ const GlobalStyles = createGlobalStyle<Props>`
   body {
     font-family: Ubuntu;
     background-color: ${props => props.theme.color.backgroundColor };
+    height: 200vh;
   }
 
   a {

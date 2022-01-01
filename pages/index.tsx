@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
 import NavigationLinks from 'components/Navigation/Navigation'
+import HomeLoader from 'components/HomeLoader/HomeLoader'
 
 export default function Home() {
+  const [ isLoading, setIsLoading ] = useState(true)
   return (
     <>
       <div>
@@ -13,7 +16,11 @@ export default function Home() {
         </Head>
 
         <main>
-          <NavigationLinks />
+          {isLoading ?
+            <HomeLoader finishLoading={() => setIsLoading(false)} />
+            :
+            <NavigationLinks />
+          }
         </main>
       </div>
     </>

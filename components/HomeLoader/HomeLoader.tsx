@@ -11,7 +11,7 @@ type Props = {
 const HomeLoader = ({ finishLoading }: Props) => {
   useEffect(() => {
     const animeLoader = anime.timeline({
-      // complete: () => finishLoading()
+      complete: () => finishLoading()
     })
   
     animeLoader.add({
@@ -27,7 +27,7 @@ const HomeLoader = ({ finishLoading }: Props) => {
       })
       .add({
         targets: '.line',
-        duration: 500,
+        duration: 200,
         easing: 'linear',
         width: '100%',
         direction: 'alternate',
@@ -40,7 +40,7 @@ const HomeLoader = ({ finishLoading }: Props) => {
       })
       .add({
         targets: '.line',
-        duration: 500,
+        duration: 200,
         easing: 'linear',
         width: 0,
         direction: 'alternate',

@@ -64,6 +64,10 @@ const GlobalStyles = createGlobalStyle<Props>`
     border: none;
     cursor: pointer;
   }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: ${p => p.theme.color.fontColor}
+  }
 `
 
 export default GlobalStyles

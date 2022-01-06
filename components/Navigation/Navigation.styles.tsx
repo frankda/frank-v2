@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const Button = styled.button`
+  svg {
+    color: ${p => p.theme.color.fontColor};
+  }
+`
+
 export const Container = styled.header`
   padding: 48px 16px 0 16px;
   height: 400px;

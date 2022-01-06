@@ -52,12 +52,17 @@ const GlobalStyles = createGlobalStyle<Props>`
   body {
     font-family: Ubuntu;
     background-color: ${props => props.theme.color.backgroundColor };
-    height: 200vh;
   }
 
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 `
 

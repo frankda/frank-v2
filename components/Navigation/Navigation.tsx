@@ -1,7 +1,9 @@
 import { useContext } from 'react'
 
 import { ThemeContext } from 'pages/_app'
+import Moon from './MoonIcon/MoonIcon'
 import { 
+  Button,
   Container,
   Left,
   Link,
@@ -10,9 +12,10 @@ import {
   NavigationWrapper,
   Right
 } from './Navigation.styles'
+import Sun from './SunIcon/SunIcon'
 
 const Navigation = () => {
-  const { toggleTheme } = useContext(ThemeContext)
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext)
   return (
     <Container>
       <NavigationWrapper>
@@ -23,7 +26,9 @@ const Navigation = () => {
           </NavigationLinks>
         </Left>
         <Right>
-          <button onClick={toggleTheme}>Theme</button>
+          <Button onClick={toggleTheme}>
+            {isDarkTheme ? <Moon /> : <Sun />}
+          </Button>
         </Right>
       </NavigationWrapper>
     </Container>

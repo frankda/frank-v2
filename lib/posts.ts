@@ -2,6 +2,12 @@ import fs from 'fs'
 import path from 'path'
 import { bundleMDX } from 'mdx-bundler'
 
+export interface PostData {
+  id: string
+  code: string
+  frontmatter?: object
+}
+
 const getComponents = () => {
   const componentsFiles = {}
   const componentsDirectory = path.join(process.cwd(), 'components')
@@ -15,7 +21,7 @@ const getComponents = () => {
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export const getSortedPostsData = async () => {
+export const getSortedPostsData = () => {
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map(async fileName => {
     const id = fileName.replace(/\.mdx$/, '')
@@ -36,4 +42,15 @@ export const getSortedPostsData = async () => {
   })
 
   return Promise.all(allPostsData) 
+}
+
+export const getPostData = async (fileName: any) => {
+  const filePath = path.join(postsDirectory, `${fileName}.mdx`)
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const { code, frontmatter } = await bundleMDX({
+    source: fileContents,
+    files: getComponents()
+  })
+
+  return { code, frontmatter }
 }

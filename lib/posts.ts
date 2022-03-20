@@ -44,7 +44,7 @@ export const getSortedPostsData = () => {
   return Promise.all(allPostsData) 
 }
 
-export const getPostData = async (fileName: any) => {
+export const getPostData = async (fileName: string) => {
   const filePath = path.join(postsDirectory, `${fileName}.mdx`)
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { code, frontmatter } = await bundleMDX({

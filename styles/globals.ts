@@ -51,11 +51,11 @@ const GlobalStyles = createGlobalStyle<Props>`
 
   body {
     font-family: Ubuntu;
-    background-color: ${props => props.theme.color.backgroundColor };
+    background-color: ${p => p.theme.color.backgroundColor };
   }
 
   a {
-    color: inherit;
+    color: ${p => p.theme.color.fontColor};
     text-decoration: none;
   }
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import BannerCanvas from 'components/BannerCanvas/BannerCanvas'
 import NavigationLinks from 'components/Navigation/Navigation'
 import HomeLoader from 'components/HomeLoader/HomeLoader'
 import { PostData, getSortedPostsData } from 'lib/posts'
@@ -49,6 +50,7 @@ export default function Home({ allPostsData }: Props) {
             <NavigationLinks />
           }
           {renderPostsList()}
+          {/* <BannerCanvas /> */}
         </main>
       </div>
     </>

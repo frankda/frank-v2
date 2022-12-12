@@ -20,7 +20,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ allPostsData }: Props) {
+const Home = ({ allPostsData }: Props) => {
   const [ isLoading, setIsLoading ] = useState(false)
 
   const renderPostsList = () => {
@@ -56,3 +56,6 @@ export default function Home({ allPostsData }: Props) {
     </>
   )
 }
+
+
+export default Home
